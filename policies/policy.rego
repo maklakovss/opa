@@ -21,7 +21,7 @@ permissions contains resource if {
 		"access": access(resourceName, token),
 	}
 }
-res:=policies.data.resources
+res:=data.policies.resources
 
 access(resourceName, token) := "deny" if {
 	role := token.groups[_]
