@@ -14,6 +14,6 @@ sudo docker run -d --network opa -e "OPAL_POLICY_REPO_URL=https://github.com/mak
 
 # run opal_client and opa based on official image (contains OPAL-client and OPA-service)
 # port 7000 - used for communicate with opal_client (not required outside now)
-# port 8181 - for communicate wit opa (used for orchestrator)
+# port 8181 - for communicate with opa (used for orchestrator)
 # OPAL_SERVER_URL - for getting initial policies and data after opal_client start
 sudo docker run -d --network opa -p 8181:8181 -e "OPAL_SERVER_URL=http://opal_server:7002" --name opal_client permitio/opal-client:latest
