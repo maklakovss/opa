@@ -1,13 +1,13 @@
 {
   "resources": [
-    "allEntities"
+    "allEntities1"
   ],
   "roles": {
     "SSP-UI-R": {
-      "allEntities": "read"
+      "allEntities1": "read"
     },
     "SSP-UI-W": {
-      "allEntities": "write"
+      "allEntities1": "write"
     }
   }
 }
