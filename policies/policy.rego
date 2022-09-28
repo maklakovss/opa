@@ -14,24 +14,23 @@ user[property] := property_val if {
 permissions contains resource if {
 	token := get_token(input.token)
 
-	some resourceName in data.resources
+	some resourceName in data.policies.resources
 
 	resource := {
 		"resource": resourceName,
 		"access": access(resourceName, token),
 	}
 }
-res:=data.policies.resources
 
 access(resourceName, token) := "deny" if {
 	role := token.groups[_]
-	data.roles[role][resourceName] == "deny"
+	data.policies.roles[role][resourceName] == "deny"
 } else := "write" {
 	role := token.groups[_]
-	data.roles[role][resourceName] == "write"
+	data.policies.roles[role][resourceName] == "write"
 } else := "read" {
 	role := token.groups[_]
-	data.roles[role][resourceName] == "read"
+	data.policies.roles[role][resourceName] == "read"
 } else := "deny" {
 	true
 }
