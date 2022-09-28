@@ -18,7 +18,7 @@ permissions contains resource if {
 
 	resource := {
 		"resource": resourceName,
-		"access": access(resourceName, token)
+		"access": access(resourceName, token),
 	}
 }
 
