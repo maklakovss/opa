@@ -22,8 +22,6 @@ permissions contains resource if {
 	}
 }
 
-token := get_token(input.token)
-
 access(resourceName, token) := "deny" if {
 	role := token.groups[_]
 	data.roles[role][resourceName] == "deny"
